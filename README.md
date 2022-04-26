@@ -20,6 +20,10 @@ __avf__
  " dict function name
  xxx.yyy.zzz(234)
  <---------->
+ v:.count(234)
+ <------->
+ a:x.y(234)
+ <---->
 
  " autoload function name
  xxx#yyy#zzz(234, 234)
@@ -43,6 +47,10 @@ __ivf__
  " dict function name
  xxx.yyy.zzz(234)
  <--------->
+ v:.count(234)
+ <------>
+ a:x.y(234)
+ <--->
 
  " autoload function name
  xxx#yyy#zzz(234, 234)

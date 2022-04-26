@@ -38,7 +38,6 @@ function! s:parse_scope(xs, j) abort
 	if !s:starts_with_function_name(a:xs, j)
 		return -1
 	endif
-	" :h variable-scope
 	if join(a:xs[j:], '') =~# '^s:'
 		let k += 1
 		while get(a:xs, k, '') =~# '[a-zA-Z0-9_]'
@@ -58,6 +57,10 @@ function! s:parse_dict(xs, j) abort
 		return -1
 	endif
 	if a:xs[j] =~# '[a-zA-Z0-9_]'
+		" :h variable-scope
+		if join(a:xs[j:], '') =~# '^[bwtglsav]:'
+			let k += 1
+		endif
 		while (get(a:xs, k, '') =~# '[a-zA-Z0-9_]') || ((get(a:xs, k - 1, '') != '.') && (get(a:xs, k, '') == '.'))
 			let k += 1
 		endwhile
